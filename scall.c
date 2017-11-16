@@ -16,6 +16,8 @@ extern struct task_struct *get_pid_task(struct pid *pid, enum pid_type);
 asmlinkage long sys_det(int pid){
 	struct task_struct *task = NULL;
 	task = pid_task(find_vpid(pid), PIDTYPE_PID);
+	printk("O pid eh %d\n",task -> pid);
+
 /*Antigo
 	struct task_struct *processo = find_task_by_vpid(pid);
 	printk("o nr do processo eh %d\n",task_pid_nr(processo));
