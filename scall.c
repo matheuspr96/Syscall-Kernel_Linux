@@ -4,6 +4,10 @@
 #include <linux/pid.h>		//pid_task(), PIDTYPE_PID
 #include <linux/sched.h>
 
+// JOÂO PAULO GAY, GOSTA DE RAPAZES // 
+Ai meu cu // so di sacanagi
+
+
 /*Antigo
 extern struct task_struct *find_task_by_vpid(pid_t nr);
 EXPORT_SYMBOL(find_task_by_vpid);
