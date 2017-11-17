@@ -5,7 +5,7 @@
 #include <linux/sched.h>
 
 // JOÂO PAULO GAY, GOSTA DE RAPAZES // 
-Ai meu cu // so di sacanagi
+
 
 
 /*Antigo
