@@ -20,8 +20,8 @@ extern struct task_struct *get_pid_task(struct pid *pid, enum pid_type);
 asmlinkage long sys_det(int pid){
 	struct task_struct *task = NULL;
 	task = pid_task(find_vpid(pid), PIDTYPE_PID);
-	task -> shed_info.pcount;
-	printk("O pid eh %d\n",task -> pid);
+	//task -> shed_info.pcount;
+	printk("O pid eh %lld\n",task -> cputime_expires.sum_exec_runtime);
 
 /*Antigo
 	struct task_struct *processo = find_task_by_vpid(pid);
