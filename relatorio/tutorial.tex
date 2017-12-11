@@ -57,6 +57,7 @@ de gerência do kernel.
 	Nesta seção vamos compilar o Kernel que previamente fizemos o Download para trabalhar com ele e assim poder cria nossas System Calls.
 	Primeiramente precisamos instalar na nossa maquina um conjunto de ferramentas que nos permitira compilar nosso kernel, basta abrir seu terminal e digitar o seguinte comando:\newline
 	\verb!sudo apt-­get install libncurses5­dev gcc make git exuberant­ctags! 
+	\newline
 	Criamos uma pasta no nosso espaço de trabalho, posteriormente extraimos todo o conteudo do Kernel com o seguinte comando:\newline \verb!tar xvf linux­­*.tar.xz! \newline onde * é a versão do kernel que acabamos de fazer o download neste caso usamos linux-12.13.12, então ficou\newline
 	\verb!tar xvf linux­3.17.1.tar.xz!\newline
 	A seguir abrimos nossa pasta pelo terminal e acessamos onde está o kernel, fazendo uso do comando cd, que permite acessar um diretório.
@@ -69,7 +70,7 @@ de gerência do kernel.
 	\verb"make modules" \newline
 	\verb"sudo make modules_install"\newline
 	E por fim instalamos nosso novo kernel!, Este comando instala o Kernel, gera a imagem, copia os arquivos para o diretório /boot e atualiza o gerenciador de boot.\newline
-	\verb"sudo make install" \newline;
+	\verb"sudo make install" \newline
 	Agora está tudo pronto só precisamos acessar nosso novo kernel, para isso use no terminal o comando:\newline
 	\verb"reboot" \newline
 	
@@ -84,48 +85,61 @@ Assim a função pode ser chamada pela função \textit{\textbf{syscall(333)}} p
 \\ \newline
 \scriptsize{\textbf{unsigned long copy\_to\_user(void \_user *to, const void *from, unsigned long n)};}
 \newline
+\normalsize
 	
-Vejamos agora o código do kernel utilizado para
+Vejamos agora o código do kernel utilizado para:
 
 \subsubsection*{Tempo na CPU}
 	Como primeira tentativa para obter o tempo de CPU de um processo, acessamos a variável \textit{sum\_exec\_runtime} na estrutura \textit{task\_cputime}, com base nos comentários da estrutura, concluímos que tal variável era o que desejávamos como segue na figura 2: %fazer um hiperlink
 
-\vspace*{0.2cm}
-\begin{figure}[!h]
+%\vspace*{0.2cm}
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.5]{imagens/img1.png}
 	\caption{Estrutura task\_cputime}
 	\label{taskcputime}
 \end{figure}
-\vspace*{0.2cm}
+%\vspace*{0.2cm}
 
 	No entanto, com a tentativa não obtivemos o resultado esperado.
 como segunda tentativa, encontramos uma função chamada get\_sum\_exec\_runtime. Apartir de ai decidimos usar o que a função fornece, ou seja, chamar direto na propia task o desejado usando esse "su" que posteriormente seria a shed\_entity como segue a imagem:
  
-\vspace*{0.2cm}
-\begin{figure}[!h]
+%\vspace*{0.2cm}
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.6]{imagens/img2.png}
 	\caption{Parte da estrutura sched\_entity}
 	\label{schedentity}
 \end{figure}
-\vspace*{0.2cm}
+%\vspace*{0.2cm}
 
 	Que é o resultado que procuravamos, decidimos usar direto pois chamar uma função pode ser menos eficiente que chama-la na propia task\_struct assim obtemos em nano-segundos o tempo que o processo passou pela CPU.
 
 
 \subsubsection*{Tempo de vida do processo}
+O tempo de vida do processo não pode ser extraído diretamente, assim a estratégia adotada foi usar a  variável interna à \textit{task\_struck}, a \textit{start\_time} presente na \textit{shed.h}, que é o tempo em nanosegundos contando apartir do boot da máquina (Monotic):
+ \begin{figure}[!htb]
+	\centering
+	\includegraphics{imagens/start.png} 
+	\caption{start\_time: Tempo de vida do processo em nanosegundos contando apartir do boot}
+	\label{start}
+\end{figure}
+A outra variável usada foi a função  \textbf{ktime\_get\_boottime()} presente em \textit{linux/timekeeping.h}. Essa função retorna, intuitivamente, o \textit{boot time} que é o tempo em que a máquina está ligada, desde de o boot até o momento atual. Tendo essas duas variáveis, a \textit{start\_time} foi subtraída do retorno da função \textbf{ktime\_get\_boottime()}, como se segue na figura. Assim foi possível obter o tempo de vida do processo. 
+
+
+
+%\vspace{5cm}
 \subsubsection*{N$^{\circ}$  de vezes que o processo passou pela CPU}
 	Verificando a task\_struct percebimos que tinha uma estrutura que nos auxiliaria chamada shed\_info como segue na figura 5:
  
  \begin{figure}[!htb]
 	\centering
 \includegraphics[scale=0.7]{imagens/shed_info.png} 
-	\caption{Sched\/info}
+	\caption{Sched\_info}
 	\label{schedinf}
 \end{figure}	
 
- 	asta retornar o pcount que obteremos o resultado desejado
+ 	basta retornar o pcount que obteremos o resultado desejado
  
 \subsection*{Código da system call}
 	Segue o código:

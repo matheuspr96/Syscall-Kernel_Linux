@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.13)  10 DEC 2017 23:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.12.11)  11 DEC 2017 07:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **tutorial.tex
 (./tutorial.tex
 LaTeX2e <2017-04-15>
-Babel <3.12> and hyphenation patterns for 84 language(s) loaded.
+Babel <3.12> and hyphenation patterns for 6 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -657,132 +657,145 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 55.
  [3]
-Overfull \hbox (21.40492pt too wide) in paragraph at lines 57--63
-[][]\T1/aett/m/n/12 sudo apt--get install libncurses5-dev gcc make git exuberan
-t-ctags []\T1/aer/m/n/12 Cri-
- []
-
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 64.
+(babel)             in language append on input line 65.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 64.
-[4 <./imagens/kernelorg.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 64--75
+(babel)             in language append on input line 65.
+ [4 <./imagens/kernelorg.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 65--76
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 80.
+(babel)             in language append on input line 81.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 80.
+(babel)             in language append on input line 81.
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 81--87
+Underfull \hbox (badness 10000) in paragraph at lines 82--89
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--87
+Underfull \hbox (badness 10000) in paragraph at lines 82--89
 
- []
-
-
-Overfull \hbox (4.96538pt too wide) in paragraph at lines 91--92
-\T1/aer/m/n/8 Como pri-meira ten-ta-tiva para ob-ter o tempo de CPU de um pro-c
-esso, aces-sa-mos a va-riá-vel \T1/aer/m/it/8 sum_exec_runtime
  []
 
 <imagens/img1.png, id=41, 606.265pt x 391.4625pt>
 File: imagens/img1.png Graphic file (type png)
 <use imagens/img1.png>
-Package pdftex.def Info: imagens/img1.png  used on input line 96. on input line
- 96.
+Package pdftex.def Info: imagens/img1.png  used on input line 98. on input line
+ 98.
 Package pdftex.def Info: Requested size: 303.13176pt x 195.73076pt on input lin
-e 96.
-<imagens/img2.png, id=43, 462.72874pt x 271.0125pt>
+e 98.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 106.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 106.
+[6 <./imagens/img1.png>]
+<imagens/img2.png, id=54, 462.72874pt x 271.0125pt>
 File: imagens/img2.png Graphic file (type png)
 <use imagens/img2.png>
-Package pdftex.def Info: imagens/img2.png  used on input line 108. on input lin
-e 108.
+Package pdftex.def Info: imagens/img2.png  used on input line 110. on input lin
+e 110.
 Package pdftex.def Info: Requested size: 277.63939pt x 162.60875pt on input lin
-e 108.
+e 110.
+<imagens/start.png, id=55, 479.7925pt x 56.21pt>
+File: imagens/start.png Graphic file (type png)
+<use imagens/start.png>
+Package pdftex.def Info: imagens/start.png  used on input line 123. on input li
+ne 123.
+Package pdftex.def Info: Requested size: 479.7913pt x 56.20985pt on input line 
+123.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 115.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 115.
-[6 <./imagens/img1.png>]
-<imagens/shed_info.png, id=56, 403.5075pt x 354.32375pt>
-File: imagens/shed_info.png Graphic file (type png)
-<use imagens/shed_info.png>
-Package pdftex.def Info: imagens/shed_info.png  used on input line 123. on inpu
-t line 123.
-Package pdftex.def Info: Requested size: 282.45332pt x 248.02492pt on input lin
-e 123.
-<imagens/codigosys.png, id=57, 972.63374pt x 642.4pt>
-File: imagens/codigosys.png Graphic file (type png)
-<use imagens/codigosys.png>
-Package pdftex.def Info: imagens/codigosys.png  used on input line 136. on inpu
-t line 136.
-Package pdftex.def Info: Requested size: 486.31567pt x 321.19922pt on input lin
-e 136.
-
-Overfull \hbox (96.31567pt too wide) in paragraph at lines 136--137
+Overfull \hbox (89.7913pt too wide) in paragraph at lines 123--124
  [][] 
  []
 
-<imagens/cod.png, id=58, 1294.8375pt x 335.2525pt>
+
+Overfull \hbox (16.15865pt too wide) in paragraph at lines 120--128
+\T1/aer/m/n/12 má-quina (Mo-no-tic): A ou-tra va-riá-vel usada foi a fun-ção \T
+1/aer/bx/n/12 ktime_get_boottime()
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 128.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 128.
+[7 <./imagens/img2.png> <./imagens/start.png>]
+<imagens/shed_info.png, id=66, 403.5075pt x 354.32375pt>
+File: imagens/shed_info.png Graphic file (type png)
+<use imagens/shed_info.png>
+Package pdftex.def Info: imagens/shed_info.png  used on input line 137. on inpu
+t line 137.
+Package pdftex.def Info: Requested size: 282.45332pt x 248.02492pt on input lin
+e 137.
+<imagens/codigosys.png, id=67, 972.63374pt x 642.4pt>
+File: imagens/codigosys.png Graphic file (type png)
+<use imagens/codigosys.png>
+Package pdftex.def Info: imagens/codigosys.png  used on input line 150. on inpu
+t line 150.
+Package pdftex.def Info: Requested size: 486.31567pt x 321.19922pt on input lin
+e 150.
+
+Overfull \hbox (96.31567pt too wide) in paragraph at lines 150--151
+ [][] 
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 157.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 157.
+[8 <./imagens/shed_info.png>]
+<imagens/cod.png, id=76, 1294.8375pt x 335.2525pt>
 File: imagens/cod.png Graphic file (type png)
 <use imagens/cod.png>
-Package pdftex.def Info: imagens/cod.png  used on input line 146. on input line
- 146.
+Package pdftex.def Info: imagens/cod.png  used on input line 159. on input line
+ 159.
 Package pdftex.def Info: Requested size: 479.08237pt x 124.04147pt on input lin
-e 146.
+e 159.
 
-Overfull \hbox (89.08237pt too wide) in paragraph at lines 146--147
+Overfull \hbox (89.08237pt too wide) in paragraph at lines 159--160
 [][] 
  []
 
 (./tutorial.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 154.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 167.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 154.
+(babel)             in language append on input line 167.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 154.
- [7 <./imagens/img2.png>]
+(babel)             in language append on input line 167.
+ [9 <./imagens/codigosys.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 154.
+(babel)             in language append on input line 167.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 154.
- [8 <./imagens/shed_info.png>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 154.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 154.
+(babel)             in language append on input line 167.
+ [10 <./imagens/cod.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 167.
 
-[9 <./imagens/codigosys.png> <./imagens/cod.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 154.
- (./tutorial.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 154.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 154.
+(./tutorial.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 167.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 167.
 Package rerunfilecheck Info: File `tutorial.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 154.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 167.
  ) 
 Here is how much of TeX's memory you used:
- 6317 strings out of 492990
- 89377 string characters out of 6135004
- 174375 words of memory out of 5000000
- 9715 multiletter control sequences out of 15000+600000
- 43253 words of font info for 85 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 29i,7n,25p,984b,338s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 6321 strings out of 494870
+ 89467 string characters out of 6179054
+ 169750 words of memory out of 5000000
+ 9482 multiletter control sequences out of 15000+600000
+ 40763 words of font info for 82 fonts, out of 8000000 for 9000
+ 38 hyphenation exceptions out of 8191
+ 28i,7n,25p,984b,338s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/tex
@@ -791,12 +804,11 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmtt12.pfb>
-Output written on tutorial.pdf (9 pages, 521768 bytes).
+amsfonts/cm/cmtt12.pfb>
+Output written on tutorial.pdf (10 pages, 511104 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
- 29 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 127 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
+ 31 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
