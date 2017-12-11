@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+
+\bibitem{scall}
+System call.
+
+\bibitem{getpid}
+kernel: efficient way to find task\_struct by pid?, jan 2012.
+
+\bibitem{robertlinux}
+L.~Robert.
+\newblock {\em Linux Kernel Development}.
+\newblock Pearson Education India.
+
+\end{thebibliography}

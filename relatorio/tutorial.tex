@@ -4,7 +4,6 @@
 \usepackage[pdftex]{hyperref}
 \usepackage[T1]{fontenc} % caracteres com acentos são considerados um bloco só
 \usepackage{graphicx}
-
 \usepackage{ae} %arruma a fonte quando usa o pacote acima
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}%Para inserir figuras
@@ -81,7 +80,7 @@ A \textit{system call} foi criada dentro na pasta kernel no diretório principal
 
 \textbf{333	common	scall			sys\_det}
 \newline
-Assim a função pode ser chamada pela função \textit{\textbf{syscall(333)}} presente na \textit{unistd.h}. Por fim, foi adicionado o cabeçalho da função no arquivo \textit{syscall.h}. Depois disso foi compilado o kernel seguindo o tutorial proposto  %\cite{tutorial}. 
+Assim a função pode ser chamada pela função \textit{\textbf{syscall(333)}} presente na \textit{unistd.h}. Por fim, foi adicionado o cabeçalho da função no arquivo \textit{syscall.h}. Depois disso foi compilado o kernel seguindo o tutorial proposto\cite{scall}. 
 \\ \newline
 \scriptsize{\textbf{unsigned long copy\_to\_user(void \_user *to, const void *from, unsigned long n)};}
 \newline
@@ -117,7 +116,7 @@ como segunda tentativa, encontramos uma função chamada get\_sum\_exec\_runtime
 
 
 \subsubsection*{Tempo de vida do processo}
-O tempo de vida do processo não pode ser extraído diretamente, assim a estratégia adotada foi usar a  variável interna à \textit{task\_struck}, a \textit{start\_time} presente na \textit{shed.h}, que é o tempo em nanosegundos contando apartir do boot da máquina (Monotic):
+O tempo de vida do processo não pode ser extraído diretamente, assim a estratégia adotada foi usar a  variável interna à \textit{task\_struck}, a \textit{start\_time} presente na \textit{shed.h}, que é o tempo em nanosegundos contando apartir do boot da máquina (Monotic) \cite{robertlinux}
  \begin{figure}[!htb]
 	\centering
 	\includegraphics{imagens/start.png} 
@@ -125,9 +124,12 @@ O tempo de vida do processo não pode ser extraído diretamente, assim a estrat�
 	\label{start}
 \end{figure}
 A outra variável usada foi a função  \textbf{ktime\_get\_boottime()} presente em \textit{linux/timekeeping.h}. Essa função retorna, intuitivamente, o \textit{boot time} que é o tempo em que a máquina está ligada, desde de o boot até o momento atual. Tendo essas duas variáveis, a \textit{start\_time} foi subtraída do retorno da função \textbf{ktime\_get\_boottime()}, como se segue na figura. Assim foi possível obter o tempo de vida do processo. 
-
-
-
+ \begin{figure}[!htb]
+	\centering
+	\includegraphics{imagens/life.png} 
+	\caption{Tempo de vida do processo em nanosegundos presente na system call}
+	\label{start}
+\end{figure}
 %\vspace{5cm}
 \subsubsection*{N$^{\circ}$  de vezes que o processo passou pela CPU}
 	Verificando a task\_struct percebimos que tinha uma estrutura que nos auxiliaria chamada shed\_info como segue na figura 5:
@@ -140,28 +142,39 @@ A outra variável usada foi a função  \textbf{ktime\_get\_boottime()} presente
 \end{figure}	
 
  	basta retornar o pcount que obteremos o resultado desejado
+ \pagebreak
  
+\subsubsection*{Retornar -1 caso o processo não exista}
+A função \textit{pid\_task} retorna um ponteiro para \textit{task\_struct} dado um PID caso o PID seja zero ou ele não exista, a função retorna NULL\cite{getpid}.
+
+\begin{figure}[!htb]
+	\centering
+\includegraphics[scale=0.5]{imagens/pid.png} 
+	\caption{Estrutura da função que retorna um ponteiro para \textit{tas\_struct} dado um PID}
+\end{figure}
+
+Assim, na \textit{system call} foi colocada uma condição na qual, caso a função retorne NULL, a \textit{system call} retornará -1 em todas as variáveis de retorno.
+\pagebreak
 \subsection*{Código da system call}
 	Segue o código:
 
-\vspace*{0.2cm}
+
 \begin{figure}[!htb]
 	\centering
 \includegraphics[scale=0.5]{imagens/codigosys.png} 
 	\caption{Código da system call}
 \end{figure}
-\vspace*{0.2cm}
 	
 	Foi usada também a função copy\_to\_user para copiar um bloco de dados do kernel para o espaço de usuário para que a função possa retornar por parâmetro
-
+ \pagebreak
 \subsection*{Programa usuário da system call}
 \begin{figure}[!htb]
 \includegraphics[scale=0.37]{imagens/cod.png} 
 	\caption{Código para chamar system call}
 \end{figure}
-
+ \pagebreak
 
 \bibliographystyle{abbrv}
-\bibliography{refs}
+\bibliography{tutorial}
 
 \end{document}
