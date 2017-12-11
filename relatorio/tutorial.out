@@ -7,4 +7,5 @@
 \BOOKMARK [3][-]{section*.7}{N de vezes que o processo passou pela CPU}{section*.4}% 7
 \BOOKMARK [3][-]{section*.8}{Retornar -1 caso o processo n\343o exista}{section*.4}% 8
 \BOOKMARK [1][-]{section*.9}{C\363digo da system call}{}% 9
-\BOOKMARK [1][-]{section*.10}{Programa usu\341rio da system call}{}% 10
+\BOOKMARK [1][-]{section*.10}{Compila\347\343o parcial do Kernel}{}% 10
+\BOOKMARK [1][-]{section*.11}{Programa usu\341rio da system call}{}% 11

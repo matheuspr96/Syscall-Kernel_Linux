@@ -59,18 +59,18 @@ de gerência do kernel.
 
 \subsection{Compilação do kernel}
 	Nesta seção vamos compilar o Kernel que previamente fizemos o Download para trabalhar com ele e assim poder cria nossas System Calls.
-	Primeiramente precisamos instalar na nossa maquina um conjunto de ferramentas que nos permitira compilar nosso kernel, basta abrir seu terminal e digitar o seguinte comando:\newline
+	Primeiramente precisamos instalar na nossa maquina um conjunto de ferramentas que nos permitirá compilar nosso kernel, basta abrir seu terminal e digitar o seguinte comando:\newline
 	\verb!sudo apt-­get install libncurses5­dev gcc make git exuberant­ctags! 
 	\newline
-	Criamos uma pasta no nosso espaço de trabalho, posteriormente extraimos todo o conteudo do Kernel com o seguinte comando:\newline \verb!tar xvf linux­­*.tar.xz! \newline onde * é a versão do kernel que acabamos de fazer o download neste caso usamos linux-12.13.12, então ficou\newline
+	Criamos uma pasta no nosso espaço de trabalho, posteriormente extraimos todo o conteudo do Kernel com o seguinte comando:\newline \verb!tar xvf linux­­*.tar.xz! \newline onde * é a versão do kernel que acabamos de fazer o download, neste caso usamos linux-12.13.12, então ficou\newline
 	\verb!tar xvf linux­3.17.1.tar.xz!\newline
 	A seguir abrimos nossa pasta pelo terminal e acessamos onde está o kernel, fazendo uso do comando cd, que permite acessar um diretório.
 
 	Agora vamos compilar nosso kernel completamente, para isso basta usar o comando make, porém existe algumas opções bem úteis para agilizar o processo para isso usamos: \newline
 	\verb!make -­j4 CONFIG_LOCALVERSION="tutorial".! \newline
-	Ao usar o -j4 estamos dizendo que o processo pode usar quandos processadores estejam disponiveis, no caso do exemplo saõ 4, ou seja, a maquina usada possui 4 processadores para realizar a tarefa, se sua maquina possuir 6, 8, etc você pode substituir pelo número de processadores da sua maquina,ou seja, jX, sendo x o número de processadores da sua maquina, vale resaltar que se precisa usar a máquina durante o processo é recomendavel deixar ao menos 1 processador para realizar suas atividas. Já o "tutorial" será o nome que seu kernel receberá após ser compilado e que você irá acessar quando estiver iniciando seu ubuntu, você pode alterar para o nome que desejar e fica entre "", pois, é um conjunto de caracteres, este processo pode demorar, pois, é um processo extremadamente grande, irá depender também da velocidade de processamento da máquina, em testes feitos pela nossas maquinas normalmente demorou entre 3 a 5 horas.
+	Ao usar o -j4 estamos dizendo que o processo pode usar quantos processadores estejam disponiveis, no caso do exemplo saõ 4, ou seja, a maquina usada possui 4 processadores para realizar a tarefa, se sua maquina possuir 6, 8, etc você pode substituir pelo número de processadores da sua maquina,ou seja, jX, sendo x o número de processadores da sua maquina, vale resaltar que se precisa usar a máquina durante o processo é recomendavel deixar ao menos 1 processador para realizar suas atividas. Já o "tutorial" será o nome que seu kernel receberá após ser compilado e que você irá acessar quando estiver iniciando seu ubuntu, você pode alterar para o nome que desejar e fica entre "", pois, é um conjunto de caracteres, este processo pode demorar, pois, é um processo extremadamente grande, irá depender também da velocidade de processamento da máquina, em testes feitos pela nossas maquinas normalmente demorou entre 3 a 5 horas.
 	\newline
-	Quando por fim a compilação acabar precisamos substituir o kernel para assim que todas as modificações que fizermos posteriormente nele, possam ser carregadas com o sistema. Para isso abrimos o terminal vamos na pasta que criamos conforme a imagem anterior, e usamos os seguintes comandos: \newline
+	Quando por fim a compilação acabar precisamos substituir o kernel para assim que todas as modificações que fizermos posteriormente nele possam ser carregadas com o sistema. Para isso abrimos o terminal vamos na pasta que criamos conforme a imagem anterior, e usamos os seguintes comandos: \newline
 	\verb"make modules" \newline
 	\verb"sudo make modules_install"\newline
 	E por fim instalamos nosso novo kernel!, Este comando instala o Kernel, gera a imagem, copia os arquivos para o diretório /boot e atualiza o gerenciador de boot.\newline
@@ -96,29 +96,24 @@ Vejamos agora o código do kernel utilizado para:
 \subsubsection{Tempo na CPU}
 	Como primeira tentativa para obter o tempo de CPU de um processo, acessamos a variável \textit{sum\_exec\_runtime} na estrutura \textit{task\_cputime}, com base nos comentários da estrutura, concluímos que tal variável era o que desejávamos como segue na figura 2: %fazer um hiperlink
 
-%\vspace*{0.2cm}
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.5]{imagens/img1.png}
 	\caption{Estrutura task\_cputime}
 	\label{taskcputime}
 \end{figure}
-%\vspace*{0.2cm}
 
 	No entanto, com a tentativa não obtivemos o resultado esperado.
-como segunda tentativa, encontramos uma função chamada get\_sum\_exec\_runtime. Apartir de ai decidimos usar o que a função fornece, ou seja, chamar direto na propia task o desejado usando esse "su" que posteriormente seria a shed\_entity como segue a imagem:
+como segunda tentativa, encontramos uma função chamada get\_sum\_exec\_runtime. A partir de ai decidimos usar o que a função fornece, ou seja, chamar direto na propia task o desejado usando esse "su" que posteriormente seria a shed\_entity como segue a imagem:
  
-%\vspace*{0.2cm}
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.6]{imagens/img2.png}
 	\caption{Parte da estrutura sched\_entity}
 	\label{schedentity}
 \end{figure}
-%\vspace*{0.2cm}
 
-	Que é o resultado que procuravamos, decidimos usar direto pois chamar uma função pode ser menos eficiente que chama-la na propia task\_struct assim obtemos em nano-segundos o tempo que o processo passou pela CPU.
-
+	Que é o resultado que procurávamos, decidimos usar direto pois chamar uma função pode ser menos eficiente que chama-la na propia task\_struct assim obtemos em nano-segundos o tempo que o processo passou pela CPU.
 
 \subsubsection{Tempo de vida do processo}
 O tempo de vida do processo não pode ser extraído diretamente, assim a estratégia adotada foi usar a  variável interna à \textit{task\_struck}, a \textit{start\_time} presente na \textit{shed.h}, que é o tempo em nanosegundos contando apartir do boot da máquina (Monotic) \cite{robertlinux}
@@ -135,9 +130,9 @@ A outra variável usada foi a função  \textbf{ktime\_get\_boottime()} presente
 	\caption{Tempo de vida do processo em nanosegundos presente na system call}
 	\label{life}
 \end{figure}
-%\vspace{5cm}
+
 \subsubsection{N$^{\circ}$  de vezes que o processo passou pela CPU}
-	Verificando a task\_struct percebimos que tinha uma estrutura que nos auxiliaria chamada shed\_info como segue na figura 5:
+	Verificando a task\_struct percebemos que tinha uma estrutura que nos auxiliaria chamada shed\_info como segue na figura 5:
  
  \begin{figure}[!htb]
 	\centering
@@ -163,7 +158,6 @@ Assim, na \textit{system call} foi colocada uma condição na qual, caso a funç
 \section{Código da system call}
 	Segue o código:
 
-
 \begin{figure}[!htb]
 	\centering
 \includegraphics[scale=0.5]{imagens/codigosys.png} 
@@ -172,11 +166,24 @@ Assim, na \textit{system call} foi colocada uma condição na qual, caso a funç
 	
 	Foi usada também a função copy\_to\_user para copiar um bloco de dados do kernel para o espaço de usuário para que a função possa retornar por parâmetro
  \pagebreak
+ 
+\section{Compilação parcial do Kernel}
+	Agora basta compilar nossa system call porém, diferente da primeira vez vamos fazer uma compilação parcial do kernel, assim todas nossas alterações feita na system call seram carregadas para isso usamos o comando: \newline
+	\verb"make bzImage" \newline
+após usar este comando basta carregar e instalar os modulos com os seguintes comandos:\newline
+	\verb"make modules" \newline
+	\verb"sudo make modules_install" \newline
+	\verb"sudo make install" \newline
+	
+	Agora nossa system call está pronta basta reiniciar nossa máquina e estar nossa system call.
+ 
 \section{Programa usuário da system call}
 \begin{figure}[!htb]
 \includegraphics[scale=0.37]{imagens/cod.png} 
 	\caption{Código para chamar system call}
 \end{figure}
+
+	Basta agora compilar nosso programa no nível de usuário e testar nossa system call e conferir os resultados!
  \pagebreak
 
 \bibliographystyle{abbrv}

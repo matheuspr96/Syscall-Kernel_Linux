@@ -7,13 +7,10 @@ int main(){
 	printf("Digite um pid: ");
 	int x,y;
 	long int ncpu, cputime;
-	long long int lifetime=0;
+	long long int lifetime = 0;
 	scanf("%d",&y);
-	x = syscall(333,y,&ncpu,&cputime,&lifetime);
-	//printf("%d",errno);
-	if(x==0)
-		printf("N° de vzs na CPU: %ld\n Time in CPU: %ld\n life time: %lld\n",ncpu, cputime,lifetime);
-		//comando para testar o tempo de vida do processo:ps -o etimes= -p "pid"
-	else printf("n sei q q rolou");
-	return 0;
+	x = syscall(333, y, &ncpu, &cputime, &lifetime);
+	if(x == 0)
+		printf("Numero de vezes na CPU: %ld\nTempo do processo na CPU: %ld\nTempo de vida do processo: %lld\n",ncpu, cputime,lifetime);
+	else return -1;
 }

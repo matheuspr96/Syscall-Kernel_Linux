@@ -1,7 +1,0 @@
-https://stackoverflow.com/questions/8547332/kernel-efficient-way-to-find-task-struct-by-pid
-
--galera, é o seguinte o snapshot q o farofa achou lá, é a marcação do tempo no pardrão POSIX que é o tempo em nanosegundos desde 01/01/1970 
-até o momento que ele pega a struct
-
-
--

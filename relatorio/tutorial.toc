@@ -8,4 +8,5 @@
 \contentsline {subsubsection}{N$^{\circ }$ de vezes que o processo passou pela CPU}{8}{section*.7}
 \contentsline {subsubsection}{Retornar -1 caso o processo n\IeC {\~a}o exista}{9}{section*.8}
 \contentsline {section}{C\IeC {\'o}digo da system call}{10}{section*.9}
-\contentsline {section}{Programa usu\IeC {\'a}rio da system call}{11}{section*.10}
+\contentsline {section}{Compila\IeC {\c c}\IeC {\~a}o parcial do Kernel}{11}{section*.10}
+\contentsline {section}{Programa usu\IeC {\'a}rio da system call}{11}{section*.11}
