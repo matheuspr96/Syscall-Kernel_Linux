@@ -21,7 +21,7 @@
 	\texttt{lucasrossi98@hotmail.com}
 	\and		
 	Matheus Pimenta Reis
-	\texttt{matheu}
+	\texttt{matheuspr96@hotmail.com}
 	\vspace*{9cm}
 }
 
@@ -51,6 +51,29 @@ de gerência do kernel.
 	\caption{The Linux Kernel Archives: Local de download do Kernel}
 	\label{kernelorg}
 \end{figure}
+
+\subsection*{Compilação do kernel}
+	Nesta seção vamos compilar o Kernel que previamente fizemos o Download para trabalhar com ele e assim poder cria nossas System Calls.
+	Primeiramente precisamos instalar na nossa maquina um conjunto de ferramentas que nos permitira compilar nosso kernel, basta abrir seu terminal e digitar o seguinte comando:\newline
+	\verb!sudo apt-­get install libncurses5­dev gcc make git exuberant­ctags! 
+	Criamos uma pasta no nosso espaço de trabalho, posteriormente extraimos todo o conteudo do Kernel com o seguinte comando:\newline \verb!tar xvf linux­­*.tar.xz! \newline onde * é a versão do kernel que acabamos de fazer o download neste caso usamos linux-12.13.12, então ficou\newline
+	\verb!tar xvf linux­3.17.1.tar.xz!\newline
+	A seguir abrimos nossa pasta pelo terminal e acessamos onde está o kernel, fazendo uso do comando cd, que permite acessar um diretório.
+
+	Agora vamos compilar nosso kernel completamente, para isso basta usar o comando make, porém existe algumas opções bem úteis para agilizar o processo para isso usamos: \newline
+	\verb!make -­j4 CONFIG_LOCALVERSION="tutorial".! \newline
+	Ao usar o -j4 estamos dizendo que o processo pode usar quandos processadores estejam disponiveis, no caso do exemplo saõ 4, ou seja, a maquina usada possui 4 processadores para realizar a tarefa, se sua maquina possuir 6, 8, etc você pode substituir pelo número de processadores da sua maquina,ou seja, jX, sendo x o número de processadores da sua maquina, vale resaltar que se precisa usar a máquina durante o processo é recomendavel deixar ao menos 1 processador para realizar suas atividas. Já o "tutorial" será o nome que seu kernel receberá após ser compilado e que você irá acessar quando estiver iniciando seu ubuntu, você pode alterar para o nome que desejar e fica entre "", pois, é um conjunto de caracteres, este processo pode demorar, pois, é um processo extremadamente grande, irá depender também da velocidade de processamento da máquina, em testes feitos pela nossas maquinas normalmente demorou entre 3 a 5 horas.
+	\newline
+	Quando por fim a compilação acabar precisamos substituir o kernel para assim que todas as modificações que fizermos posteriormente nele, possam ser carregadas com o sistema. Para isso abrimos o terminal vamos na pasta que criamos conforme a imagem anterior, e usamos os seguintes comandos: \newline
+	\verb"make modules" \newline
+	\verb"sudo make modules_install"\newline
+	E por fim instalamos nosso novo kernel!, Este comando instala o Kernel, gera a imagem, copia os arquivos para o diretório /boot e atualiza o gerenciador de boot.\newline
+	\verb"sudo make install" \newline;
+	Agora está tudo pronto só precisamos acessar nosso novo kernel, para isso use no terminal o comando:\newline
+	\verb"reboot" \newline
+	
+	Quando estiver na opção de escolher o Sistema Operacional basta acessar opções avançadas do ubuntu e selecionar o seu kernel, que estará identificado pelo nome inserido no começo, vale resaltar que quando você selecionar o kernel uma vez não é necessário selecionar-lo toda vez que der boot, a máquna pega o ultimo kernel instalado.
+	
 \subsection*{Criação da System Call}
 A \textit{system call} foi criada dentro na pasta kernel no diretório principal deixando o arquivo  scall.c nessa pasta. Após isso foi adicionado o arquivo objeto no arquivo de \textit{makefile} como descrito no tutorial, dessa forma, foi encontrada no arquivo \textit{syscall\_64.tbl} na forma: \newline
 
@@ -66,43 +89,57 @@ Vejamos agora o código do kernel utilizado para
 \subsubsection*{Tempo na CPU}
 Como primeira tentativa para obter o tempo de CPU de um processo, acessamos a variável \textit{sum\_exec\_runtime} na estrutura \textit{task\_cputime}, com base nos comentários da estrutura, concluímos que tal variável era o que desejávamos como segue na figura 2: %fazer um hiperlink
 
+\vspace*{0.2cm}
 \begin{figure}[!h]
 	\centering
 	\includegraphics[scale=0.5]{imagens/img1.png}
 	\caption{Estrutura task\_cputime}
 	\label{taskcputime}
 \end{figure}
+\vspace*{0.2cm}
 
-No entanto, com a tentativa não obtivemos o resultado esperado.
-Como segunda tentativa, encontramos uma outra estrutura chamada \textit{sched\_entity} na qual, na mesma, encontra-se uma outra variável chamada \textit{sum\_exec\_runtime}, como segue na imagem abaixo:
+	No entanto, com a tentativa não obtivemos o resultado esperado.
+como segunda tentativa, encontramos uma função chamada get\_sum\_exec\_runtime como segue a imagem:
 
-\begin{figure}[!htb]
+\vspace*{0.2cm}
+\begin{figure}[!h]
+	\centering
+\includegraphics[scale=0.5]{imagens/sum_e.png} 
+	\caption{sum\_exec\_runtime}
+	\label{decschedentity}
+\end{figure}
+\vspace*{0.2cm}
+
+ Apartir de ai decidimos usar o que a função fornece, ou seja, chamar direto na propia task o desejado usando esse "su" que posteriormente seria a shed\_entity como segue a imagem:
+ 
+\vspace*{0.2cm}
+\begin{figure}[!h]
 	\centering
 	\includegraphics[scale=0.4]{imagens/img2.png}
 	\caption{Parte da estrutura sched\_entity}
 	\label{schedentity}
 \end{figure}
+\vspace*{0.2cm}
 
-Depois procuramos na \textit{task\_struct} a declaração de uma variável do tipo \textit{sched\_entity}:
-
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[scale=0.8]{imagens/img3.png}
-	\caption{Declaração da sched\_entity na linha 563 na task\_struct}
-	\label{decschedentity}
-\end{figure}
-
-
+	Que é o resultado que procuravamos, decidimos usar direto pois chamar uma função pode ser menos eficiente que chama-la na propia task\_struct assim obtemos em nano-segundos o tempo que o processo passou pela CPU.
 
 
 \subsubsection*{Tempo de vida do processo}
 \subsubsection*{N$^{\circ}$  de vezes que o processo passou pela CPU}
 \subsection*{Código da system call}
+Segue o código:
+
+\vspace*{0.2cm}
+\begin{figure}[!h]
+	\centering
+\includegraphics[scale=0.5]{imagens/codigosys.png} 
+	\caption{Código da system call}
+\end{figure}
+\vspace*{0.2cm}
+
 Foi usada também a função copy\_to\_user para copiar um bloco de dados do kernel para o espaço de usuário para que a função possa retornar por parâmetro
 
 \subsection*{Programa usuário da system call}
-
-
 
 
 \bibliographystyle{abbrv}
