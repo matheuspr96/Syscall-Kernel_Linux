@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.12.11)  11 DEC 2017 09:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.12.11)  11 DEC 2017 09:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -151,7 +151,7 @@ LaTeX Info: Redefining \pageref on input line 6432.
 \c@Hfootnote=\count95
 )
 
-Package hyperref Message: Driver: hpdftex.
+Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2017/03/14 v6.85a Hyperref driver for pdfTeX
@@ -850,17 +850,13 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 185.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 185.
 Package rerunfilecheck Info: File `tutorial.out' has not changed.
 (rerunfilecheck)             Checksum: 5C94EB75C624B15F43D01FAC5C8DD8BC;718.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 185.
  ) 
 Here is how much of TeX's memory you used:
- 6368 strings out of 494870
- 90126 string characters out of 6179054
- 170033 words of memory out of 5000000
- 9515 multiletter control sequences out of 15000+600000
+ 6367 strings out of 494870
+ 90113 string characters out of 6179054
+ 170018 words of memory out of 5000000
+ 9514 multiletter control sequences out of 15000+600000
  40763 words of font info for 82 fonts, out of 8000000 for 9000
  38 hyphenation exceptions out of 8191
  28i,7n,32p,984b,461s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -873,7 +869,7 @@ t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmtt12.pfb>
-Output written on tutorial.pdf (12 pages, 542629 bytes).
+Output written on tutorial.pdf (12 pages, 542457 bytes).
 PDF statistics:
  194 PDF objects out of 1000 (max. 8388607)
  154 compressed objects within 2 object streams
