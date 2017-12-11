@@ -4,6 +4,7 @@
 \usepackage[pdftex]{hyperref}
 \usepackage[T1]{fontenc} % caracteres com acentos são considerados um bloco só
 \usepackage{graphicx}
+
 \usepackage{ae} %arruma a fonte quando usa o pacote acima
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}%Para inserir figuras
@@ -87,7 +88,7 @@ Assim a função pode ser chamada pela função \textit{\textbf{syscall(333)}} p
 Vejamos agora o código do kernel utilizado para
 
 \subsubsection*{Tempo na CPU}
-Como primeira tentativa para obter o tempo de CPU de um processo, acessamos a variável \textit{sum\_exec\_runtime} na estrutura \textit{task\_cputime}, com base nos comentários da estrutura, concluímos que tal variável era o que desejávamos como segue na figura 2: %fazer um hiperlink
+	Como primeira tentativa para obter o tempo de CPU de um processo, acessamos a variável \textit{sum\_exec\_runtime} na estrutura \textit{task\_cputime}, com base nos comentários da estrutura, concluímos que tal variável era o que desejávamos como segue na figura 2: %fazer um hiperlink
 
 \vspace*{0.2cm}
 \begin{figure}[!h]
@@ -99,23 +100,12 @@ Como primeira tentativa para obter o tempo de CPU de um processo, acessamos a va
 \vspace*{0.2cm}
 
 	No entanto, com a tentativa não obtivemos o resultado esperado.
-como segunda tentativa, encontramos uma função chamada get\_sum\_exec\_runtime como segue a imagem:
-
-\vspace*{0.2cm}
-\begin{figure}[!h]
-	\centering
-\includegraphics[scale=0.5]{imagens/sum_e.png} 
-	\caption{sum\_exec\_runtime}
-	\label{decschedentity}
-\end{figure}
-\vspace*{0.2cm}
-
- Apartir de ai decidimos usar o que a função fornece, ou seja, chamar direto na propia task o desejado usando esse "su" que posteriormente seria a shed\_entity como segue a imagem:
+como segunda tentativa, encontramos uma função chamada get\_sum\_exec\_runtime. Apartir de ai decidimos usar o que a função fornece, ou seja, chamar direto na propia task o desejado usando esse "su" que posteriormente seria a shed\_entity como segue a imagem:
  
 \vspace*{0.2cm}
 \begin{figure}[!h]
 	\centering
-	\includegraphics[scale=0.4]{imagens/img2.png}
+	\includegraphics[scale=0.6]{imagens/img2.png}
 	\caption{Parte da estrutura sched\_entity}
 	\label{schedentity}
 \end{figure}
@@ -126,22 +116,38 @@ como segunda tentativa, encontramos uma função chamada get\_sum\_exec\_runtime
 
 \subsubsection*{Tempo de vida do processo}
 \subsubsection*{N$^{\circ}$  de vezes que o processo passou pela CPU}
+	Verificando a task\_struct percebimos que tinha uma estrutura que nos auxiliaria chamada shed\_info como segue na figura 5:
+ 
+ \begin{figure}[!htb]
+	\centering
+\includegraphics[scale=0.7]{imagens/shed_info.png} 
+	\caption{Sched\/info}
+	\label{schedinf}
+\end{figure}	
+
+ 	asta retornar o pcount que obteremos o resultado desejado
+ 
 \subsection*{Código da system call}
-Segue o código:
+	Segue o código:
 
 \vspace*{0.2cm}
-\begin{figure}[!h]
+\begin{figure}[!htb]
 	\centering
 \includegraphics[scale=0.5]{imagens/codigosys.png} 
 	\caption{Código da system call}
 \end{figure}
 \vspace*{0.2cm}
-
-Foi usada também a função copy\_to\_user para copiar um bloco de dados do kernel para o espaço de usuário para que a função possa retornar por parâmetro
+	
+	Foi usada também a função copy\_to\_user para copiar um bloco de dados do kernel para o espaço de usuário para que a função possa retornar por parâmetro
 
 \subsection*{Programa usuário da system call}
+\begin{figure}[!htb]
+\includegraphics[scale=0.37]{imagens/cod.png} 
+	\caption{Código para chamar system call}
+\end{figure}
 
 
 \bibliographystyle{abbrv}
 \bibliography{refs}
+
 \end{document}
