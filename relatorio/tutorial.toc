@@ -1,1 +1,11 @@
 \select@language {brazil}
+\contentsline {section}{\numberline {1}Implementa\IeC {\c c}\IeC {\~a}o \textbf {System Calls} no Linux}{3}{section.1}
+\contentsline {subsection}{Download do Kernel}{3}{section*.2}
+\contentsline {subsection}{Compila\IeC {\c c}\IeC {\~a}o do kernel}{4}{section*.3}
+\contentsline {subsection}{Cria\IeC {\c c}\IeC {\~a}o da System Call}{6}{section*.4}
+\contentsline {subsubsection}{Tempo na CPU}{6}{section*.5}
+\contentsline {subsubsection}{Tempo de vida do processo}{7}{section*.6}
+\contentsline {subsubsection}{N$^{\circ }$ de vezes que o processo passou pela CPU}{8}{section*.7}
+\contentsline {subsubsection}{Retornar -1 caso o processo n\IeC {\~a}o exista}{9}{section*.8}
+\contentsline {section}{C\IeC {\'o}digo da system call}{10}{section*.9}
+\contentsline {section}{Programa usu\IeC {\'a}rio da system call}{11}{section*.10}

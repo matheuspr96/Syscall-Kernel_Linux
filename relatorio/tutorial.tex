@@ -1,11 +1,13 @@
 \documentclass[12pt]{article} 
 \usepackage[brazil]{babel} %hifenização em português do brasil
+%\usepackage[portuguese]{babel}
 \usepackage{gensymb}
 \usepackage[pdftex]{hyperref}
 \usepackage[T1]{fontenc} % caracteres com acentos são considerados um bloco só
 \usepackage{graphicx}
 \usepackage{ae} %arruma a fonte quando usa o pacote acima
 \usepackage[utf8]{inputenc}
+\usepackage{makeidx}
 \usepackage{graphicx}%Para inserir figuras
 
 \usepackage{cite}
@@ -26,10 +28,11 @@
 }
 
 \maketitle
-\tableofcontents
 
+\tableofcontents
 \pagebreak
-\section*{Implementação \textbf{System Calls} no Linux}
+
+\section{Implementação \textbf{System Calls} no Linux}
 As \textit{System Calls} fazer o interfaceamento entre o hardware e os processo do espaço de usuário, elas também servem para três propósitos principais:
 \begin{enumerate}
 	\item Provém abstração com o hardware para que o usuário tenha um maior rendimento. Por exemplo, o usuário não se preocupa com o tipo de partição em que ele lerá um arquivo;
@@ -39,7 +42,9 @@ As \textit{System Calls} fazer o interfaceamento entre o hardware e os processo 
 	As chamadas syscalls em linux são, na maioria dos casos, acessadas pelas funções definidas na C library. As syscalls em si retornam um valor do tipo long4 que, quando negativo, em geral, denota um erro, já o retorno com valor zero (nem sempre) é um sinal de sucesso. A C library, quando uma \textit{system call} retorna um erro, ela grava o código desse erro na variável global errno, que pode ser ser traduzida para um texto que fala sobre o erro através de funções de biblioteca.
 	
 	Para a implementação de uma \textit{system call} deve-se ter acesso ao código do kernel do sistema operacional para tanto, foi escolhido o kernel Linux que é open source.
-\subsection*{Download do Kernel}
+\setcounter{secnumdepth}{-1}
+
+\subsection{Download do Kernel}
 Por ser open source, o código fonte do kernel do Linux é mantido online para livre acesso no GitHub(\url{https://github.com/torvalds/linux}), e também em The Linux Kernel Archives (\url{https://www.kernel.org/}) em várias versões e formatos de arquivos(compactados). A versão mais recente dado a data de início do TCD foi a versão \textbf{14.13.12}.
 de gerência do kernel.
 	A Free Software Foundation mantém, gerencia e presta suporte para o The Linux Kernel Archives.O donwnload do kernel pode ser feito facilmente, além de outras funções com perguntas frequentes, download de versões em teste (beta) para ser compilado em qualquer distribuição linux ou em outras plataformas que suportam o kernel.
@@ -52,7 +57,7 @@ de gerência do kernel.
 	\label{kernelorg}
 \end{figure}
 
-\subsection*{Compilação do kernel}
+\subsection{Compilação do kernel}
 	Nesta seção vamos compilar o Kernel que previamente fizemos o Download para trabalhar com ele e assim poder cria nossas System Calls.
 	Primeiramente precisamos instalar na nossa maquina um conjunto de ferramentas que nos permitira compilar nosso kernel, basta abrir seu terminal e digitar o seguinte comando:\newline
 	\verb!sudo apt-­get install libncurses5­dev gcc make git exuberant­ctags! 
@@ -75,7 +80,7 @@ de gerência do kernel.
 	
 	Quando estiver na opção de escolher o Sistema Operacional basta acessar opções avançadas do ubuntu e selecionar o seu kernel, que estará identificado pelo nome inserido no começo, vale resaltar que quando você selecionar o kernel uma vez não é necessário selecionar-lo toda vez que der boot, a máquna pega o ultimo kernel instalado.
 	
-\subsection*{Criação da System Call}
+\subsection{Criação da System Call}
 A \textit{system call} foi criada dentro na pasta kernel no diretório principal deixando o arquivo  scall.c nessa pasta. Após isso foi adicionado o arquivo objeto no arquivo de \textit{makefile} como descrito no tutorial, dessa forma, foi encontrada no arquivo \textit{syscall\_64.tbl} na forma: \newline
 
 \textbf{333	common	scall			sys\_det}
@@ -88,7 +93,7 @@ Assim a função pode ser chamada pela função \textit{\textbf{syscall(333)}} p
 	
 Vejamos agora o código do kernel utilizado para:
 
-\subsubsection*{Tempo na CPU}
+\subsubsection{Tempo na CPU}
 	Como primeira tentativa para obter o tempo de CPU de um processo, acessamos a variável \textit{sum\_exec\_runtime} na estrutura \textit{task\_cputime}, com base nos comentários da estrutura, concluímos que tal variável era o que desejávamos como segue na figura 2: %fazer um hiperlink
 
 %\vspace*{0.2cm}
@@ -115,7 +120,7 @@ como segunda tentativa, encontramos uma função chamada get\_sum\_exec\_runtime
 	Que é o resultado que procuravamos, decidimos usar direto pois chamar uma função pode ser menos eficiente que chama-la na propia task\_struct assim obtemos em nano-segundos o tempo que o processo passou pela CPU.
 
 
-\subsubsection*{Tempo de vida do processo}
+\subsubsection{Tempo de vida do processo}
 O tempo de vida do processo não pode ser extraído diretamente, assim a estratégia adotada foi usar a  variável interna à \textit{task\_struck}, a \textit{start\_time} presente na \textit{shed.h}, que é o tempo em nanosegundos contando apartir do boot da máquina (Monotic) \cite{robertlinux}
  \begin{figure}[!htb]
 	\centering
@@ -128,10 +133,10 @@ A outra variável usada foi a função  \textbf{ktime\_get\_boottime()} presente
 	\centering
 	\includegraphics{imagens/life.png} 
 	\caption{Tempo de vida do processo em nanosegundos presente na system call}
-	\label{start}
+	\label{life}
 \end{figure}
 %\vspace{5cm}
-\subsubsection*{N$^{\circ}$  de vezes que o processo passou pela CPU}
+\subsubsection{N$^{\circ}$  de vezes que o processo passou pela CPU}
 	Verificando a task\_struct percebimos que tinha uma estrutura que nos auxiliaria chamada shed\_info como segue na figura 5:
  
  \begin{figure}[!htb]
@@ -144,7 +149,7 @@ A outra variável usada foi a função  \textbf{ktime\_get\_boottime()} presente
  	basta retornar o pcount que obteremos o resultado desejado
  \pagebreak
  
-\subsubsection*{Retornar -1 caso o processo não exista}
+\subsubsection{Retornar -1 caso o processo não exista}
 A função \textit{pid\_task} retorna um ponteiro para \textit{task\_struct} dado um PID caso o PID seja zero ou ele não exista, a função retorna NULL\cite{getpid}.
 
 \begin{figure}[!htb]
@@ -155,7 +160,7 @@ A função \textit{pid\_task} retorna um ponteiro para \textit{task\_struct} dad
 
 Assim, na \textit{system call} foi colocada uma condição na qual, caso a função retorne NULL, a \textit{system call} retornará -1 em todas as variáveis de retorno.
 \pagebreak
-\subsection*{Código da system call}
+\section{Código da system call}
 	Segue o código:
 
 
@@ -167,7 +172,7 @@ Assim, na \textit{system call} foi colocada uma condição na qual, caso a funç
 	
 	Foi usada também a função copy\_to\_user para copiar um bloco de dados do kernel para o espaço de usuário para que a função possa retornar por parâmetro
  \pagebreak
-\subsection*{Programa usuário da system call}
+\section{Programa usuário da system call}
 \begin{figure}[!htb]
 \includegraphics[scale=0.37]{imagens/cod.png} 
 	\caption{Código para chamar system call}

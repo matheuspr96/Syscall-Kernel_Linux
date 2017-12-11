@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.12.11)  11 DEC 2017 08:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.12.11)  11 DEC 2017 09:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -527,45 +527,44 @@ Now handling font encoding PD1 ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+)
 (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
-) (./tutorial.aux
-
-LaTeX Warning: Label `start' multiply defined.
-
-)
+) (./tutorial.aux)
 \openout1 = `tutorial.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Info: Redefining \celsius on input line 13.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Info: Redefining \celsius on input line 15.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 15.
 
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 13.
-Package gensymb Info: Using \Omega for \ohm on input line 13.
+LaTeX Info: Redefining \ohm on input line 15.
+Package gensymb Info: Using \Omega for \ohm on input line 15.
 
 Package gensymb Warning: Not defining \micro.
 
 \AtBeginShipoutBox=\box26
-Package hyperref Info: Link coloring OFF on input line 13.
+Package hyperref Info: Link coloring OFF on input line 15.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -574,9 +573,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count98
 )
-LaTeX Info: Redefining \ref on input line 13.
-LaTeX Info: Redefining \pageref on input line 13.
-LaTeX Info: Redefining \nameref on input line 13.
+LaTeX Info: Redefining \ref on input line 15.
+LaTeX Info: Redefining \pageref on input line 15.
+LaTeX Info: Redefining \nameref on input line 15.
 
 (./tutorial.out) (./tutorial.out)
 \@outlinefile=\write3
@@ -614,226 +613,257 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 29.
+(Font)              <14.4> on input line 31.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 29.
-LaTeX Font Info:    Try loading font information for T1+aett on input line 29.
+(Font)              <7> on input line 31.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 31.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Overfull \hbox (3.56813pt too wide) in paragraph at lines 29--29
+Overfull \hbox (3.56813pt too wide) in paragraph at lines 31--31
  [][] 
  []
 
-(./tutorial.toc)
+(./tutorial.toc
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 3.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 3.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 3.
+)
 \tf@toc=\write4
 \openout4 = `tutorial.toc'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 32.
+(babel)             in language append on input line 34.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 32.
- [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 32.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 32.
+(babel)             in language append on input line 34.
 
 [2]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 43.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 43.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 43.
-<imagens/kernelorg.png, id=21, 1445.4pt x 903.375pt>
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 35.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 47.
+<imagens/kernelorg.png, id=72, 1445.4pt x 903.375pt>
 File: imagens/kernelorg.png Graphic file (type png)
 <use imagens/kernelorg.png>
-Package pdftex.def Info: imagens/kernelorg.png  used on input line 50. on input
- line 50.
+Package pdftex.def Info: imagens/kernelorg.png  used on input line 55. on input
+ line 55.
 Package pdftex.def Info: Requested size: 289.07487pt x 180.6718pt on input line
- 50.
+ 55.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 54.
+(babel)             in language append on input line 59.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 54.
+(babel)             in language append on input line 59.
  [3]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 64.
+(babel)             in language append on input line 60.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 64.
+(babel)             in language append on input line 69.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 69.
  [4 <./imagens/kernelorg.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 64--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
+Underfull \hbox (badness 10000) in paragraph at lines 69--80
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 80.
+(babel)             in language append on input line 83.
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
+
+ []
+
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 80.
+(babel)             in language append on input line 85.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 85.
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 81--88
+Underfull \hbox (badness 10000) in paragraph at lines 86--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--88
+Underfull \hbox (badness 10000) in paragraph at lines 86--93
 
  []
 
-<imagens/img1.png, id=42, 606.265pt x 391.4625pt>
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 96.
+<imagens/img1.png, id=90, 606.265pt x 391.4625pt>
 File: imagens/img1.png Graphic file (type png)
 <use imagens/img1.png>
-Package pdftex.def Info: imagens/img1.png  used on input line 97. on input line
- 97.
+Package pdftex.def Info: imagens/img1.png  used on input line 102. on input lin
+e 102.
 Package pdftex.def Info: Requested size: 303.13176pt x 195.73076pt on input lin
-e 97.
+e 102.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 105.
+(babel)             in language append on input line 110.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 105.
+(babel)             in language append on input line 110.
 [6 <./imagens/img1.png>]
-<imagens/img2.png, id=56, 462.72874pt x 271.0125pt>
+<imagens/img2.png, id=102, 462.72874pt x 271.0125pt>
 File: imagens/img2.png Graphic file (type png)
 <use imagens/img2.png>
-Package pdftex.def Info: imagens/img2.png  used on input line 109. on input lin
-e 109.
+Package pdftex.def Info: imagens/img2.png  used on input line 114. on input lin
+e 114.
 Package pdftex.def Info: Requested size: 277.63939pt x 162.60875pt on input lin
-e 109.
-
-
-LaTeX Warning: Citation `robertlinux' on page 7 undefined on input line 119.
-
-<imagens/start.png, id=57, 479.7925pt x 56.21pt>
+e 114.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 123.
+<imagens/start.png, id=104, 479.7925pt x 56.21pt>
 File: imagens/start.png Graphic file (type png)
 <use imagens/start.png>
-Package pdftex.def Info: imagens/start.png  used on input line 122. on input li
-ne 122.
+Package pdftex.def Info: imagens/start.png  used on input line 127. on input li
+ne 127.
 Package pdftex.def Info: Requested size: 479.7913pt x 56.20985pt on input line 
-122.
+127.
 
-Overfull \hbox (89.7913pt too wide) in paragraph at lines 122--123
+Overfull \hbox (89.7913pt too wide) in paragraph at lines 127--128
  [][] 
  []
 
-<imagens/life.png, id=58, 522.95375pt x 59.22125pt>
+<imagens/life.png, id=105, 522.95375pt x 59.22125pt>
 File: imagens/life.png Graphic file (type png)
 <use imagens/life.png>
-Package pdftex.def Info: imagens/life.png  used on input line 129. on input lin
-e 129.
+Package pdftex.def Info: imagens/life.png  used on input line 134. on input lin
+e 134.
 Package pdftex.def Info: Requested size: 522.95247pt x 59.22108pt on input line
- 129.
+ 134.
 
-Overfull \hbox (132.95247pt too wide) in paragraph at lines 129--130
+Overfull \hbox (132.95247pt too wide) in paragraph at lines 134--135
  [][] 
  []
 
 
-Overfull \hbox (26.45479pt too wide) in paragraph at lines 119--134
-\T1/aer/m/n/12 má-quina (Mo-no-tic) [\T1/aer/bx/n/12 ?\T1/aer/m/n/12 ] A ou-tra
- va-riá-vel usada foi a fun-ção \T1/aer/bx/n/12 ktime_get_boottime()
+Overfull \hbox (25.95076pt too wide) in paragraph at lines 124--139
+\T1/aer/m/n/12 má-quina (Mo-no-tic) [[]3[]] A ou-tra va-riá-vel usada foi a fun
+-ção \T1/aer/bx/n/12 ktime_get_boottime()
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 134.
+(babel)             in language append on input line 139.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 134.
+(babel)             in language append on input line 139.
 [7 <./imagens/img2.png> <./imagens/start.png>]
-<imagens/shed_info.png, id=69, 397.485pt x 118.4425pt>
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 139.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 139.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 139.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\circ' on input line 139.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 139.
+
+<imagens/shed_info.png, id=116, 397.485pt x 118.4425pt>
 File: imagens/shed_info.png Graphic file (type png)
 <use imagens/shed_info.png>
-Package pdftex.def Info: imagens/shed_info.png  used on input line 139. on inpu
-t line 139.
+Package pdftex.def Info: imagens/shed_info.png  used on input line 144. on inpu
+t line 144.
 Package pdftex.def Info: Requested size: 278.2376pt x 82.90916pt on input line 
-139.
+144.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 146.
+(babel)             in language append on input line 151.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 146.
- [8 <./imagens/life.png> <./imagens/shed_info.png>]
-<imagens/pid.png, id=80, 722.7pt x 249.93375pt>
+(babel)             in language append on input line 151.
+[8 <./imagens/life.png> <./imagens/shed_info.png>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 152.
+<imagens/pid.png, id=125, 722.7pt x 249.93375pt>
 File: imagens/pid.png Graphic file (type png)
 <use imagens/pid.png>
-Package pdftex.def Info: imagens/pid.png  used on input line 152. on input line
- 152.
+Package pdftex.def Info: imagens/pid.png  used on input line 157. on input line
+ 157.
 Package pdftex.def Info: Requested size: 361.3491pt x 124.96657pt on input line
- 152.
+ 157.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 158.
+(babel)             in language append on input line 163.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 158.
+(babel)             in language append on input line 163.
  [9 <./imagens/pid.png>]
-<imagens/codigosys.png, id=89, 956.57375pt x 758.835pt>
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 163.
+<imagens/codigosys.png, id=133, 956.57375pt x 758.835pt>
 File: imagens/codigosys.png Graphic file (type png)
 <use imagens/codigosys.png>
-Package pdftex.def Info: imagens/codigosys.png  used on input line 164. on inpu
-t line 164.
+Package pdftex.def Info: imagens/codigosys.png  used on input line 169. on inpu
+t line 169.
 Package pdftex.def Info: Requested size: 478.2857pt x 379.41658pt on input line
- 164.
+ 169.
 
-Overfull \hbox (88.2857pt too wide) in paragraph at lines 164--165
+Overfull \hbox (88.2857pt too wide) in paragraph at lines 169--170
  [][] 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 170.
+(babel)             in language append on input line 175.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 170.
+(babel)             in language append on input line 175.
 [10 <./imagens/codigosys.png>]
-<imagens/cod.png, id=97, 1294.8375pt x 335.2525pt>
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 175.
+<imagens/cod.png, id=140, 1294.8375pt x 335.2525pt>
 File: imagens/cod.png Graphic file (type png)
 <use imagens/cod.png>
-Package pdftex.def Info: imagens/cod.png  used on input line 172. on input line
- 172.
+Package pdftex.def Info: imagens/cod.png  used on input line 177. on input line
+ 177.
 Package pdftex.def Info: Requested size: 479.08237pt x 124.04147pt on input lin
-e 172.
+e 177.
 
-Overfull \hbox (89.08237pt too wide) in paragraph at lines 172--173
+Overfull \hbox (89.08237pt too wide) in paragraph at lines 177--178
 [][] 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 176.
+(babel)             in language append on input line 181.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 176.
+(babel)             in language append on input line 181.
 [11 <./imagens/cod.png>] (./tutorial.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 185.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 180.
+(babel)             in language append on input line 185.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 180.
+(babel)             in language append on input line 185.
  [12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 185.
  (./tutorial.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 180.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 180.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 185.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 185.
 Package rerunfilecheck Info: File `tutorial.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 5C94EB75C624B15F43D01FAC5C8DD8BC;718.
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 185.
  ) 
 Here is how much of TeX's memory you used:
- 6347 strings out of 494870
- 89815 string characters out of 6179054
- 169831 words of memory out of 5000000
- 9497 multiletter control sequences out of 15000+600000
+ 6368 strings out of 494870
+ 90126 string characters out of 6179054
+ 170033 words of memory out of 5000000
+ 9515 multiletter control sequences out of 15000+600000
  40763 words of font info for 82 fonts, out of 8000000 for 9000
  38 hyphenation exceptions out of 8191
- 28i,7n,25p,984b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,7n,32p,984b,461s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/tex
@@ -843,10 +873,10 @@ t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmtt12.pfb>
-Output written on tutorial.pdf (12 pages, 540911 bytes).
+Output written on tutorial.pdf (12 pages, 542629 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 112 compressed objects within 2 object streams
+ 194 PDF objects out of 1000 (max. 8388607)
+ 154 compressed objects within 2 object streams
  40 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
 
