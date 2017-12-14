@@ -31,9 +31,23 @@
 
 \tableofcontents
 \pagebreak
+\section{Introdução}
+Este relatório visa mostrar o processo de criação de uma system call para o sistema Linux cujo a função da mesma é obter:
+
+\begin{itemize}
+
+\item O tempo na qual um processo passou executando na CPU;
+\item Quantas vezes um processo passou pela CPU;
+\item O tempo desde a criação de um processo até o momento de execução da system call(Tempo de vida do processo).
+
+\end{itemize}
+
+O parâmetro necessário para obter tais informações, é o PID de um processo (Process Identifier ou Identificador do Processo).
+
+Foi utilizada como base para a criação dessa system call, a versão 14.13.12 do kernel do Linux.
 
 \section{Implementação \textbf{System Calls} no Linux}
-As \textit{System Calls} fazer o interfaceamento entre o hardware e os processo do espaço de usuário, elas também servem para três propósitos principais:
+As \textit{System Calls} fazem o interfaceamento entre o hardware e os processo do espaço de usuário, elas também servem para três propósitos principais:
 \begin{enumerate}
 	\item Provém abstração com o hardware para que o usuário tenha um maior rendimento. Por exemplo, o usuário não se preocupa com o tipo de partição em que ele lerá um arquivo;
 	\item As \textit{system calls} garantem a segurança e estabilidade para que um usuário relativamente leigo possa ter um alto rendimento com gerência de permissão, usuários e outros critérios de gerência do kernel;
@@ -81,7 +95,7 @@ de gerência do kernel.
 	Quando estiver na opção de escolher o Sistema Operacional basta acessar opções avançadas do ubuntu e selecionar o kernel, que estará identificado pelo nome inserido no começo, vale resaltar que quando você selecionar o kernel uma vez não é necessário selecionar-lo toda vez que der boot, a máquna carrega o ultimo kernel instalado.
 	
 \subsection{Criação da System Call}
-A \textit{system call} foi criada dentro na pasta kernel no diretório principal deixando o arquivo  scall.c nessa pasta. Após isso foi adicionado o arquivo objeto no arquivo de \textit{makefile} como descrito no tutorial, dessa forma, foi encontrada no arquivo \textit{syscall\_64.tbl} na forma: \newline
+A \textit{system call} foi criada dentro na pasta kernel no diretório principal deixando o arquivo  scall.c nessa pasta. Após isso foi adicionado o arquivo objeto no arquivo de \textit{makefile} como descrito no tutorial, dessa forma, foi encontrada no arquivo \textit{syscall\_64.tbl} na forma\cite{rubini2001linux} \newline
 
 \textbf{333	common	scall			sys\_det}
 \newline
@@ -94,7 +108,7 @@ Assim a função pode ser chamada pela função \textit{\textbf{syscall(333)}} p
 Vejamos agora o código do kernel utilizado para:
 
 \subsubsection{Tempo na CPU}
-	Como primeira tentativa para obter o tempo de CPU de um processo, acessamos a variável \textit{sum\_exec\_runtime} na estrutura \textit{task\_cputime}, com base nos comentários da estrutura, concluímos que tal variável era o que desejávamos como segue na figura 2: %fazer um hiperlink
+	Como primeira tentativa para obter o tempo de CPU de um processo, acessamos a variável \textit{sum\_exec\_runtime} na estrutura \textit{task\_cputime} \cite{freeelc}, com base nos comentários da estrutura, concluímos que tal variável era o que desejávamos como segue na figura 2: %fazer um hiperlink
 
 \begin{figure}[!htb]
 	\centering
@@ -160,7 +174,7 @@ Assim, na \textit{system call} foi colocada uma condição na qual, caso a funç
 
 \begin{figure}[!htb]
 	\centering
-\includegraphics[scale=0.5]{imagens/codigosys.png} 
+\includegraphics[scale=0.5]{imagens/codsys.png} 
 	\caption{Código da system call}
 \end{figure}
 	
@@ -184,6 +198,23 @@ após usar este comando basta carregar e instalar os modulos com os seguintes co
 \end{figure}
 
 	Basta agora compilar nosso programa no nível de usuário e testar nossa system call e conferir os resultados!
+
+\pagebreak	
+	
+\section{Conclusão}
+Algumas das principais dificuldades que foram encontradas durante a execução deste trabalho foram:
+
+\begin{itemize}
+
+\item O tempo necessário para compilar o kernel;
+\item Algumas restrições do próprio kernel, como por exemplo o fato de não poder utilizar o tipo float;
+\item Desconhecimento das funções do kernel;
+\item A constante atualização das versões do kernel.
+
+Embora tenhamos tido algumas dificuldades, a execução desse trabalho mostrou-se gratificante, pois até então, nunca tivemos a necessidade de programar dentro do kernel de um sistema operacional, porém, essa experiência além de nos possibilitar adquirir um conhecimento maior sobre o funcionamento do kernel de um SO, também nos possibilitou evoluir nossos conhecimentos em programação devido a necessidade de pesquisar sobre outros tipos de dados e outras funções que até então, nunca havíamos utilizado ou sequer ouvido falar. 
+
+\end{itemize}	
+	
  \pagebreak
 
 \bibliographystyle{abbrv}

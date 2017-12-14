@@ -1,14 +1,26 @@
 \begin{thebibliography}{1}
 
+\bibitem{freeelc}
+Free electrons embedded linux experts, disponível em:
+  <http://elixir.free-electrons.com/linux/v4.13.12>.
+
 \bibitem{scall}
-System call.
+System call, disponível em em
+  <http://www.facom.ufu.br/~rivalino/gbc045/%5b2%5d%20papers%20\&%20trs/system%20call.pdf>.
 
 \bibitem{getpid}
-kernel: efficient way to find task\_struct by pid?, jan 2012.
+Kernel: efficient way to find task\_struct by pid?, disponível em
+  <https://stackoverflow.com/questions/8547332/kernel-efficient-way-to-find-task-struct-by-pid>,
+  jan 2012.
 
 \bibitem{robertlinux}
 L.~Robert.
 \newblock {\em Linux Kernel Development}.
 \newblock Pearson Education India.
+
+\bibitem{rubini2001linux}
+A.~Rubini and J.~Corbet.
+\newblock {\em Linux device drivers}.
+\newblock " O'Reilly Media, Inc.", 2001.
 
 \end{thebibliography}
